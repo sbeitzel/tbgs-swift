@@ -6,4 +6,7 @@ DerivedData/
 .DS_Store
 db.sqlite
 .swiftpm
+.idea
+Package.resolved
 
+Resources/Games

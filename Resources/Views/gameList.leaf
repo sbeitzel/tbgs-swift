@@ -1,0 +1,12 @@
+#extend("frame"):
+#export("h1"):
+Games This Server Knows How To Play
+#endexport
+#export("body"):
+<ul>
+#for(game in games):
+  <li>#(game.name): #(game.description)</li>
+#endfor
+</ul>
+#endexport
+#endextend

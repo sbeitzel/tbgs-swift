@@ -1,0 +1,13 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+
+  <title>TBGS - #(title)</title>
+</head>
+
+<body>
+  <h1>#import("h1")</h1>
+  #import("body")
+</body>
+</html>

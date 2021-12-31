@@ -1,2 +1,4 @@
 .build/
 .swiftpm/
+.idea/
+Resources/Games/*.dylib
