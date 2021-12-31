@@ -27,7 +27,8 @@ public func configure(_ app: Application) throws {
     ), as: .psql)
 
     // MARK: migrations
-    app.migrations.add(CreatePlayer())
+    app.migrations.add(Player.CreateMigration())
+    app.migrations.add(PlayerToken.CreateMigration())
 
     // MARK: sessions
     app.redis.configuration = try RedisConfiguration(

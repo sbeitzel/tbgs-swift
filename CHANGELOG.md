@@ -9,7 +9,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 * Initial implementation of the server with [Vapor].
 * Proof-of-concept for the plugin mechanism
-
+* Sketch out authentication
 
 --
 

@@ -8,18 +8,22 @@
 import Foundation
 import FluentKit
 
-struct CreatePlayer: Migration {
-    func prepare(on database: Database) async {
-        await database.schema(Player.schema)
-            .id()
-            .field("username", .string, .required)
-            .field("password", .string, .required)
-            .field("nickname", .string, .required)
-            .create()
-    }
+extension Player {
+    struct CreateMigration: AsyncMigration {
+        var name: String { "CreatePlayer" }
 
-    func revert(on database: Database) async {
-        await database.schema(Player.schema).delete()
-    }
+        func prepare(on database: Database) async throws {
+            try await database.schema(Player.schema)
+                .id()
+                .field("username", .string, .required)
+                .field("password_hash", .string, .required)
+                .field("nickname", .string, .required)
+                .unique(on: "username")
+                .create()
+        }
 
+        func revert(on database: Database) async throws {
+            try await database.schema(Player.schema).delete()
+        }
+    }
 }

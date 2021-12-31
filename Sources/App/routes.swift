@@ -12,4 +12,7 @@ func routes(_ app: Application, _ gameController: GameController) throws {
     app.get("hello") { req -> String in
         return "Hello, world!"
     }
+
+    // authenticated endpoints
+    try app.register(collection: PlayerController())
 }
